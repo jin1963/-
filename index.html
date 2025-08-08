@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>KJC LP Auto Stake (รุ่น Web3.js)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Web3.js -->
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>💧 KJC LP Auto Staking</h1>
+    <p id="status">❌ ยังไม่เชื่อมต่อกระเป๋า</p>
+    <button onclick="connectWallet()">🔗 เชื่อมต่อกระเป๋า</button>
+
+    <hr>
+
+    <label>Referrer Address:</label>
+    <input id="refAddress" placeholder="0x..." style="width:100%">
+    <button onclick="setReferrer()">📌 ตั้งค่า Referrer</button>
+
+    <hr>
+
+    <label>จำนวน USDT ที่จะใช้ซื้อ & Stake LP:</label>
+    <input id="usdtAmount" type="number" placeholder="เช่น 50">
+    <button onclick="quoteKJC()">🔍 ประเมิน KJC</button>
+    <p id="quoteBox">-</p>
+    <button onclick="buyAndStake()">🧩 Buy & Stake</button>
+
+    <hr>
+
+    <button onclick="claimStakingReward()">🎁 เคลมรางวัล Staking</button>
+    <button onclick="claimReferralReward()">🎁 เคลมรางวัล Referral</button>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="wallet.js"></script>
+  <script src="staking.js"></script>
+</body>
+</html>
